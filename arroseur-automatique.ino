@@ -28,10 +28,10 @@ void loop()
   delay(20);
   digitalWrite(ledPin,LOW);
   digitalWrite(secondledPin,LOW);
-  valRaw = analogRead(pin);(inPin);   // read the input pin
+  valRaw = analogRead(inPin);   // read the input pin
   valReal = map(valRaw, 1023, 0, 0, 100 );
 
-  if(valReal < 80 ){ //80% d'humidité
+  if(valReal < 85 ){ //80% d'humidité
     waterthatshite();
   }
 
@@ -50,7 +50,7 @@ void waterthatshite()
 {
   digitalWrite(relayPin, HIGH);
   digitalWrite(secondledPin,HIGH);
-  delay(60000); //1 minute
+  delay(30000); //30 secondes
   digitalWrite(relayPin, LOW);
   digitalWrite(secondledPin,LOW);
 }
